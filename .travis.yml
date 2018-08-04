@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+install: true
+script: ./build-all.sh
+
+deploy:
+  provider: script
+  script: bash docker_push

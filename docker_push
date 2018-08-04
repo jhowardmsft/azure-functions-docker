@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# $CONTAINER_REGISTRY="azurefunctions.azurecr.io"
+
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$CONTAINER_REGISTRY"
+
+$NAMESPACE="public"
+
+if [ "$TRAVIS_BRANCH" = "travisci" ]
+then
+    IMAGE_TAG="dev-nightly"
+else
+    IMAGE_TAG="$TRAVIS_BRANCH"
+fi
+
+docker push $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-base:$IMAGE_TAG
+docker push $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-base:$IMAGE_TAG
+docker push $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-base:$IMAGE_TAG
