@@ -34,18 +34,18 @@ fi
 
 # Build base image
 docker build . \
-    -t $NAMESPACE/azure-functions-base:$IMAGE_TAG \
+    -t $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-base:$IMAGE_TAG \
     --build-arg NAMESPACE=$NAMESPACE \
     --build-arg HOST_TAG=$HOST_TAG
 
 # Build dotnet image
-docker tag $NAMESPACE/azure-functions-base:$IMAGE_TAG \
-    $NAMESPACE/azure-functions-dotnet-core:$IMAGE_TAG
+docker tag $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-base:$IMAGE_TAG \
+    $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-dotnet-core:$IMAGE_TAG
 
 # Build node image
 pushd node8
 docker build . \
-    -t $NAMESPACE/azure-functions-node:$IMAGE_TAG \
+    -t $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-node:$IMAGE_TAG \
     --build-arg NAMESPACE=$NAMESPACE \
     --build-arg IMAGE_TAG=$IMAGE_TAG
 popd
@@ -53,7 +53,7 @@ popd
 # Build python image
 pushd python3.6
 docker build . \
-    -t $NAMESPACE/azure-functions-python:$IMAGE_TAG \
+    -t $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-python:$IMAGE_TAG \
     --build-arg NAMESPACE=$NAMESPACE \
     --build-arg WORKER_TAG=$WORKER_TAG \
     --build-arg IMAGE_TAG=$IMAGE_TAG
