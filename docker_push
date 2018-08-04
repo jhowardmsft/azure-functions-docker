@@ -14,5 +14,6 @@ else
 fi
 
 docker push $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-base:$IMAGE_TAG
-docker push $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-base:$IMAGE_TAG
-docker push $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-base:$IMAGE_TAG
+docker push $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-dotnet:$IMAGE_TAG
+docker push $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-node:$IMAGE_TAG
+docker push $CONTAINER_REGISTRY/$NAMESPACE/azure-functions-python:$IMAGE_TAG
