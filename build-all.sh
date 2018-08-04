@@ -2,7 +2,7 @@
 
 pushd host/2.0/stretch/amd64
 
-$NAMESPACE="public"
+NAMESPACE="public"
 
 if [ "$TRAVIS_BRANCH" = "travisci" ]
 then
