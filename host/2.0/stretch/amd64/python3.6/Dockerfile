@@ -1,8 +1,8 @@
 ARG NAMESPACE=microsoft
-ARG HOST_TAG=dev-nightly
 ARG WORKER_TAG=dev
+ARG IMAGE_TAG=dev-nightly
 
-FROM ${NAMESPACE}/azure-functions-base:${HOST_TAG}
+FROM ${NAMESPACE}/azure-functions-base:${IMAGE_TAG}
 ARG WORKER_TAG
 
 RUN apt-get update && \

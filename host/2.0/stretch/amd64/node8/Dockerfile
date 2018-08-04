@@ -1,6 +1,6 @@
 ARG NAMESPACE=microsoft
-ARG HOST_TAG=dev-nightly
-FROM ${NAMESPACE}/azure-functions-base:${HOST_TAG}
+ARG IMAGE_TAG=dev-nightly
+FROM ${NAMESPACE}/azure-functions-base:${IMAGE_TAG}
 
 RUN apt-get update && \
     apt-get install -y gnupg && \

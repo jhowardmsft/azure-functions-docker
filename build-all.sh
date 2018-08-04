@@ -47,7 +47,7 @@ pushd node8
 docker build . \
     -t $NAMESPACE/azure-functions-node:$IMAGE_TAG \
     --build-arg NAMESPACE=$NAMESPACE \
-    --build-arg HOST_TAG=$HOST_TAG
+    --build-arg IMAGE_TAG=$IMAGE_TAG
 popd
 
 # Build python image
@@ -55,6 +55,6 @@ pushd python3.6
 docker build . \
     -t $NAMESPACE/azure-functions-python:$IMAGE_TAG \
     --build-arg NAMESPACE=$NAMESPACE \
-    --build-arg HOST_TAG=$HOST_TAG \
-    --build-arg WORKER_TAG=$WORKER_TAG
+    --build-arg WORKER_TAG=$WORKER_TAG \
+    --build-arg IMAGE_TAG=$IMAGE_TAG
 popd
