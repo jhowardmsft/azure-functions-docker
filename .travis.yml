@@ -2,8 +2,11 @@ sudo: required
 
 services:
   - docker
+
 install: true
-script: ./build-all.sh
+
+script:
+  - bash build-all.sh
 
 deploy:
   provider: script
